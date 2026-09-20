@@ -13,7 +13,7 @@
 
 #### 布料
 
-* <img src="./images/cloth.gif" width="400" /> 
+* <!-- <img src="./images/cloth.gif" width="400" /> --> *(动图过大暂未上传)*
 
 
 <a href="/hip_files/OFFF26_LCW25_KGF.hip" target="_blank" download>📦 下载OFFF26_LCW25_KGF.hip</a>

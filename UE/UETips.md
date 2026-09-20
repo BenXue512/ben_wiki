@@ -314,7 +314,7 @@
     * <img src="./images/UnrealEditor_dRzL3Chewq.png" width="400" />
 
 * ### 6.Lightning All
-* <img src="./images/UeLightningAll.gif" width="400" />
+* <!-- <img src="./images/UeLightningAll.gif" width="400" /> --> *(动图过大暂未上传)*
 
     ##### NE_Light(爆点) && NE_Rock（不同颜色的rock） && NE_Sparks_Cylinder（消失后的细节）
     * 1.NE_Light
