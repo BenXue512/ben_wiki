@@ -134,7 +134,7 @@ tip：注意这里右边的素材只选中第一个 1*1  （不然导致后面�
 
     * change Fps to control speed
 
-    * <img src="./images/char.png" width="400" />
+    * <img src="./images/Char.png" width="400" />
 
 * 绑定快捷键
     * project > input map > add new action(自定义名字) > ➕绑定快捷键 
