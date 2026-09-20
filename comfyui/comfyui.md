@@ -83,9 +83,7 @@
 
 * <img src="./images/controlpng2.png" width="400" /> 
 
-* 对应的null节点
-
-* <img src="./images/nul.png" width="400" /> 
+* 对应的null节点 (图片待补充)
 
 * cfg什么意思
 

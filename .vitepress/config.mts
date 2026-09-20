@@ -6,6 +6,7 @@ import mathjax3 from 'markdown-it-mathjax3'
 export default defineConfig({
   title: "Ben's Wiki",
   description: "My personal knowledge base",
+  ignoreDeadLinks: true,
   vite: {
     server: {
       watch: {
