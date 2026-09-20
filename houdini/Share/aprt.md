@@ -1,0 +1,3 @@
+[dl_popattract_with_curlnoise.hipnc](attachments/WEBRESOURCEd32251f165aeb5b085ae33d01dfc076edl_popattract_with_curlnoise.hipnc)
+
+![](images/WEBRESOURCE5d347244bca71f1c392a19ddb7088bf0image.png)

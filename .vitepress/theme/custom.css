@@ -1,0 +1,11 @@
+/* .vitepress/theme/custom.css */
+
+/* 1. 把放大的半透明背景层级提到最高 */
+.medium-zoom-overlay {
+  z-index: 999 !important;
+}
+
+/* 2. 把放大后的图片层级提得比背景还要高，确保不被侧边栏和导航栏挡住 */
+.medium-zoom-image--opened {
+  z-index: 1000 !important;
+}

@@ -1,0 +1,16 @@
+node_modules
+.vitepress/dist
+.vitepress/cache
+**/nul.*
+
+*.hip
+*.hiplc
+*.rar
+*.tar
+*.pur
+public/hip_files/
+houdini/others/images/cloth.gif
+UE/images/UeLightningAll.gif
+
+*.sc
+*.bgeo.sc

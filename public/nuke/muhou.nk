@@ -1,0 +1,448 @@
+#! C:/Program Files/Nuke15.0v4/nuke-15.0.4.dll -nx
+#write_info Write1 file:"J:/TUBORG_YOU_DONT_HAVE_TO_20330/06_RnD/ben/SH1760_BTS_v003.mov" format:"2160 1440 1" chans:":rgba.red:rgba.green:rgba.blue:" framerange:"1001 1234" fps:"25" colorspace:"Output - sRGB" datatype:"unknown" transfer:"unknown" views:"main" timecode:"05:53:27:17" colorManagement:"OCIO"
+version 15.0 v4
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="0" w="1917" h="1020" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1254" stretch="1"/>
+            <splitter orientation="2">
+                <split size="572"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="403"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="615"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+                <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                <page id="Scenegraph.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name D:/ben_wiki/public/nuke/muhou.nk
+ frame 1222
+ first_frame 1001
+ last_frame 1234
+ lock_range true
+ fps 25
+ format "2160 1440 0 0 2160 1440 1 aa"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement OCIO
+ OCIO_config aces_1.2
+ defaultViewerLUT "OCIO LUTs"
+ workingSpaceLUT scene_linear
+ monitorLut "sRGB (ACES)"
+ monitorOutLUT "sRGB (ACES)"
+ int8Lut matte_paint
+ int16Lut texture_paint
+ logLut compositing_log
+ floatLut scene_linear
+}
+Read {
+ inputs 0
+ file_type exr
+ file J:/TUBORG_YOU_DONT_HAVE_TO_20330/06_RnD/ben/pic5/SH1760_PIC_%04d.exr
+ format "2160 1440 0 0 2160 1440 1 aa"
+ first 1001
+ last 1175
+ origfirst 1001
+ origlast 1175
+ origset true
+ version 4
+ name Read4
+ knobChanged "try:\n\tpcore.getPlugin(\"Nuke\").updateNodeUI(\"read\", nuke.toNode(nuke.thisNode().fullName().rsplit(\".\", 1)\[0]))\nexcept:\n\tpass"
+ label "\nFrames\n\[value first] - \[value last]"
+ xpos -1094
+ ypos 288
+ addUserKnob {20 tab_prism l Prism}
+ addUserKnob {26 fileName l File T J:/TUBORG_YOU_DONT_HAVE_TO_20330/06_RnD/ben/pic5/SH1760_PIC_%04d.exr}
+ addUserKnob {22 browse l Browse... T pcore.appPlugin.readNode_onBrowseClicked(nuke.thisNode()) +STARTLINE}
+ addUserKnob {22 openExplorer l "Open In Explorer..." -STARTLINE T pcore.appPlugin.readNode_onOpenInClicked(nuke.thisNode())}
+}
+set N2504c400 [stack 0]
+Read {
+ inputs 0
+ file_type exr
+ file J:/TUBORG_YOU_DONT_HAVE_TO_20330/03_Production/Shots/DC_90s/SH1760/Renders/2dRender/Compositing/v0005/DC_90s-SH1760_Compositing_v0005.%04d.exr
+ format "4320 2880 0 0 4320 2880 1 "
+ first 1001
+ last 1092
+ origfirst 1001
+ origlast 1092
+ origset true
+ name Read8
+ knobChanged "try:\n\tpcore.getPlugin(\"Nuke\").updateNodeUI(\"read\", nuke.toNode(nuke.thisNode().fullName().rsplit(\".\", 1)\[0]))\nexcept:\n\tpass"
+ label "\nFrames\n\[value first] - \[value last]"
+ xpos 42
+ ypos -113
+ addUserKnob {20 tab_prism l Prism}
+ addUserKnob {26 fileName l File T J:/TUBORG_YOU_DONT_HAVE_TO_20330/03_Production/Shots/DC_90s/SH1760/Renders/2dRender/Compositing/v0005/DC_90s-SH1760_Compositing_v0005.%04d.exr}
+ addUserKnob {22 browse l Browse... T pcore.appPlugin.readNode_onBrowseClicked(nuke.thisNode()) +STARTLINE}
+ addUserKnob {22 openExplorer l "Open In Explorer..." -STARTLINE T pcore.appPlugin.readNode_onOpenInClicked(nuke.thisNode())}
+}
+Reformat {
+ type scale
+ scale 0.5
+ name Reformat2
+ xpos 42
+ ypos 54
+}
+set N2504cc00 [stack 0]
+TimeOffset {
+ time_offset 142
+ time ""
+ name TimeOffset3
+ label "Offset: \[value time_offset]"
+ xpos 283
+ ypos 196
+}
+push $N2504cc00
+FrameHold {
+ firstFrame 1043
+ name FrameHold3
+ xpos 42
+ ypos 142
+}
+Roto {
+ output none
+ premultiply rgb
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x44800000 x44428000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Rectangle1 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x44928000 x4493c000}
+        {{{0 -}}
+	 {{xc48dd554 -}}}
+        {{{xc58c8334 0 1 xc0266666 1}
+	  {xc58d5334 xc0266666 1 0 1}}
+	 {{x44c31332 0 1 xc1266640 1}
+	  {x44b61335 xc1266640 1 0 1}}}
+        {{{x448dd554 -}}
+	 {{0 -}}}
+        {{{xc48dd555 0 1 x374ccccd 1}
+	  {xc48dd554 x374ccccd 1 0 1}}
+	 {{0 -}}}
+        {{{xc2ff3320 0 1 x436d47ab 1}
+	  {x450c5332 x436d47ab 1 0 1}}
+	 {{x44c4c000 0 1 xc06ccc9a 1}
+	  {x44c02001 xc06ccc9a 1 0 1}}}
+        {{{0 -}}
+	 {{xc48dd555 -}}}
+        {{{0 -}}
+	 {{x448dd555 -}}}
+        {{{xc2ff3320 0 1 x436fe145 1}
+	  {x450df332 x436fe145 1 0 1}}
+	 {{xc3a10001 0 1 x40d66633 1}
+	  {xc37f0012 x40d66633 1 0 1}}}
+        {{{xc48dd555 0 1 x374ccccd 1}
+	  {xc48dd554 x374ccccd 1 0 1}}
+	 {{0 -}}}
+        {{{x448dd554 -}}
+	 {{0 -}}}
+        {{{xc58c8334 -}}
+	 {{xc3a7b335 -}}}
+        {{{0 -}}
+	 {{x448dd555 -}}}}}     idem}
+     {tx x449c4000 x42c80000 x44ac8000}
+     {a osw x41200000 osf 0 str 1 spx x44800000 spy x44428000 sb 1 ltn x449c4000 ltm x449c4000 tt x41000000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 778}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1250
+ lifetime_end 1250
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto1
+ xpos 42
+ ypos 209
+}
+Switch {
+ inputs 2
+ which {{curve x1186 0 1}}
+ name Switch1
+ xpos 42
+ ypos 397
+}
+Read {
+ inputs 0
+ file_type exr
+ file J:/TUBORG_YOU_DONT_HAVE_TO_20330/06_RnD/ben/pic4/SH1760_PIC_%04d.exr
+ format "2160 1440 0 0 2160 1440 1 aa"
+ first 1001
+ last 1163
+ origfirst 1001
+ origlast 1163
+ origset true
+ name Read3
+ knobChanged "try:\n\tpcore.getPlugin(\"Nuke\").updateNodeUI(\"read\", nuke.toNode(nuke.thisNode().fullName().rsplit(\".\", 1)\[0]))\nexcept:\n\tpass"
+ label "\nFrames\n\[value first] - \[value last]"
+ xpos -509
+ ypos 295
+ addUserKnob {20 tab_prism l Prism}
+ addUserKnob {26 fileName l File T J:/TUBORG_YOU_DONT_HAVE_TO_20330/06_RnD/ben/pic4/SH1760_PIC_%04d.exr}
+ addUserKnob {22 browse l Browse... T pcore.appPlugin.readNode_onBrowseClicked(nuke.thisNode()) +STARTLINE}
+ addUserKnob {22 openExplorer l "Open In Explorer..." -STARTLINE T pcore.appPlugin.readNode_onOpenInClicked(nuke.thisNode())}
+}
+Reformat {
+ format "2160 1440 0 0 2160 1440 1 aa"
+ name Reformat5
+ xpos -509
+ ypos 509
+}
+set N89b0e000 [stack 0]
+FrameHold {
+ firstFrame 1057
+ name FrameHold1
+ xpos -281
+ ypos 503
+}
+Roto {
+ output none
+ premultiply rgb
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x44800000 x44428000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Rectangle1 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x44834000 x44848000}
+        {{{0 -}}
+	 {{xc48dd554 -}}}
+        {{{xc58c8334 0 1 xc0266666 1}
+	  {xc58d5334 xc0266666 1 0 1}}
+	 {{x44c31332 0 1 xc1266640 1}
+	  {x44b61335 xc1266640 1 0 1}}}
+        {{{x448dd554 -}}
+	 {{0 -}}}
+        {{{xc48dd555 0 1 x374ccccd 1}
+	  {xc48dd554 x374ccccd 1 0 1}}
+	 {{0 -}}}
+        {{{xc2ff3320 0 1 x436d47ab 1}
+	  {x450c5332 x436d47ab 1 0 1}}
+	 {{x44c4c000 0 1 xc06ccc9a 1}
+	  {x44c02001 xc06ccc9a 1 0 1}}}
+        {{{0 -}}
+	 {{xc48dd555 -}}}
+        {{{0 -}}
+	 {{x448dd555 -}}}
+        {{{xc2ff3320 0 1 x436fe145 1}
+	  {x450df332 x436fe145 1 0 1}}
+	 {{xc3a10001 0 1 x40d66633 1}
+	  {xc37f0012 x40d66633 1 0 1}}}
+        {{{xc48dd555 0 1 x374ccccd 1}
+	  {xc48dd554 x374ccccd 1 0 1}}
+	 {{0 -}}}
+        {{{x448dd554 -}}
+	 {{0 -}}}
+        {{{xc58c8334 -}}
+	 {{xc3a7b335 -}}}
+        {{{0 -}}
+	 {{x448dd555 -}}}}}     idem}
+     {tx x449c4000 x42c80000 x44ac8000}
+     {a osw x41200000 osf 0 str 1 spx x44800000 spy x44428000 sb 1 ltn x449c4000 ltm x449c4000 tt x41000000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 778}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1250
+ lifetime_end 1250
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto2
+ xpos -281
+ ypos 576
+}
+push $N89b0e000
+push $N2504c400
+Reformat {
+ format "2160 1440 0 0 2160 1440 1 aa"
+ name Reformat4
+ xpos -899
+ ypos 342
+}
+Read {
+ inputs 0
+ file_type exr
+ file J:/TUBORG_YOU_DONT_HAVE_TO_20330/03_Production/Shots/DC_90s/SH1760/Renders/2dRender/Compositing/v0005/DC_90s-SH1760_Compositing_v0005.%04d.exr
+ format "4320 2880 0 0 4320 2880 1 "
+ first 1001
+ last 1092
+ origfirst 1001
+ origlast 1092
+ origset true
+ name Read6
+ knobChanged "try:\n\tpcore.getPlugin(\"Nuke\").updateNodeUI(\"read\", nuke.toNode(nuke.thisNode().fullName().rsplit(\".\", 1)\[0]))\nexcept:\n\tpass"
+ label "\nFrames\n\[value first] - \[value last]"
+ xpos -751
+ ypos 14
+ addUserKnob {20 tab_prism l Prism}
+ addUserKnob {26 fileName l File T J:/TUBORG_YOU_DONT_HAVE_TO_20330/03_Production/Shots/DC_90s/SH1760/Renders/2dRender/Compositing/v0005/DC_90s-SH1760_Compositing_v0005.%04d.exr}
+ addUserKnob {22 browse l Browse... T pcore.appPlugin.readNode_onBrowseClicked(nuke.thisNode()) +STARTLINE}
+ addUserKnob {22 openExplorer l "Open In Explorer..." -STARTLINE T pcore.appPlugin.readNode_onOpenInClicked(nuke.thisNode())}
+}
+Reformat {
+ type scale
+ scale 0.5
+ name Reformat3
+ xpos -751
+ ypos 207
+}
+Dissolve {
+ inputs 2
+ which {{curve x1025 0 x1036 1}}
+ name Dissolve3
+ label "\[value which]"
+ xpos -751
+ ypos 330
+}
+Dissolve {
+ inputs 2
+ which {{curve x1077 0 x1086 1 x1146 1 x1161 0}}
+ name Dissolve4
+ label "\[value which]"
+ xpos -751
+ ypos 830
+}
+Dissolve {
+ inputs 2
+ which {{curve x1047 0 x1049 1 x1062 1 x1067 0}}
+ name Dissolve5
+ label "\[value which]"
+ xpos -281
+ ypos 830
+}
+Dissolve {
+ inputs 2
+ which {{curve x1169 0 x1181 1}}
+ name Dissolve2
+ label "\[value which]"
+ xpos 42
+ ypos 830
+}
+set N89b68000 [stack 0]
+Viewer {
+ inputs 2
+ frame_range 1001-1234
+ fps 25
+ viewerProcess "sRGB (ACES)"
+ monitorOutNDISenderName "NukeX - untitled - Viewer1"
+ name Viewer1
+ xpos 552
+ ypos 705
+}
+push $N89b68000
+Write {
+ file J:/TUBORG_YOU_DONT_HAVE_TO_20330/06_RnD/ben/SH1760_BTS_v003.mov
+ file_type mov
+ mov64_format "mov (QuickTime / MOV)"
+ mov64_codec h264
+ mov_h264_codec_profile "High 4:2:0 8-bit"
+ mov64_pixel_format {{0}}
+ mov64_quality Custom
+ mov64_advanced 1
+ mov64_fast_start true
+ mov64_write_timecode true
+ mov64_gop_size 12
+ mov64_b_frames 0
+ mov64_bitrate 50000
+ mov64_bitrate_tolerance 0
+ mov64_quality_min 1
+ mov64_quality_max 1
+ colorspace "Output - sRGB"
+ create_directories true
+ checkHashOnRead false
+ version 10
+ ocioColorspace scene_linear
+ display ACES
+ view sRGB
+ beforeRender "try: pcore.appPlugin.getOutputPath(nuke.thisNode(), render=True)\nexcept: pass"
+ afterRender "try: pcore.appPlugin.finishedRendering(nuke.thisNode())\nexcept: pass"
+ name Write1
+ knobChanged "try:\n\tpcore.getPlugin(\"Nuke\").updateNodeUI(\"write\", nuke.toNode(nuke.thisNode().fullName().rsplit(\".\", 1)\[0]))\nexcept:\n\tpass"
+ xpos 42
+ ypos 965
+ addUserKnob {20 tab_prism l Prism}
+ addUserKnob {1 identifier}
+ addUserKnob {1 comment l "comment (optional)"}
+ addUserKnob {4 location M {global}}
+ addUserKnob {26 ""}
+ addUserKnob {1 fileName l filepath}
+ fileName FileNotInPipeline
+ addUserKnob {22 refresh l Refresh T pcore.appPlugin.getOutputPath(nuke.thisNode()) +STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {22 startRender l Render -STARTLINE T pcore.appPlugin.startRender(nuke.thisNode())}
+ addUserKnob {22 startRenderPrevVersion l "Render as previous version..." -STARTLINE T pcore.appPlugin.renderAsVersion(nuke.thisNode())}
+ addUserKnob {6 submitJob l "Submit Job" -STARTLINE}
+ addUserKnob {26 prevFileName l "previous filepath" T -}
+ addUserKnob {22 openDir l "Open In..." T pcore.appPlugin.openInClicked(nuke.thisNode()) +STARTLINE}
+ addUserKnob {22 createRead l "Create Read" -STARTLINE T pcore.appPlugin.createRead(nuke.thisNode())}
+}
