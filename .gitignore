@@ -3,14 +3,14 @@ node_modules
 .vitepress/cache
 **/nul.*
 
-*.hip
-*.hiplc
-*.rar
-*.tar
-*.pur
-public/hip_files/
-houdini/others/images/cloth.gif
-UE/images/UeLightningAll.gif
-
+# 几何模拟缓存与大工程文件
 *.sc
 *.bgeo.sc
+*.bgeo
+*.mov
+public/hip_files/backup/
+public/hip_files/Unicore*.hip
+public/hip_files/Crystal_all.hip
+public/hip_files/Grass_motion_v006.hip
+public/hip_files/Comb_ball.hip
+public/hip_files/firework_testinshot_v006.hip
