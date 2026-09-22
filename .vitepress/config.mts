@@ -149,9 +149,11 @@ export default defineConfig({
           ]
         },
         {
-          text: '与Ai的对话',
+          text: '与Ai的对话 / 体系沉淀',
           items: [
-            { text: 'QQQ+VOO+SGOV策略与回测', link: '/finance/美股稳赢配置策略与20年回测手册' },
+            { text: '炒股金融知识学习途径', link: '/finance/炒股金融知识学习途径' },
+            { text: '实盘交易记录方法 (看板)', link: '/finance/portfolio' },
+            { text: 'QQQ+VOO+SGOV策略与20年回测', link: '/finance/美股稳赢配置策略与20年回测手册' },
           ]
         }
       ],
