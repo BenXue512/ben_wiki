@@ -13,23 +13,23 @@ echo [1/3] 正在检查本地修改...
 git status -s
 echo.
 git add -A
+echo.
 
 echo [2/3] 准备提交版本...
 set "commit_msg="
-set /p commit_msg="请输入更新说明 (直接按回车默认为自动时间戳): "
+set /p commit_msg="请输入更新说明 (直接按回车默认为自动更新): "
 if not defined commit_msg (
-    set commit_msg=Wiki update %date% %time%
+    set "commit_msg=Wiki update %date% %time%"
 )
 
 git commit -m "%commit_msg%"
 if %ERRORLEVEL% NEQ 0 (
     echo.
-    echo 提示: 本地没有检测到新的改动，无需重复提交。
-    echo 正在检查是否有未推送的历史记录...
+    echo 提示: 本地没有新改动，将直接检查并推送到云端...
 )
 
 echo.
-echo [3/3] 正在推送到 GitHub（请耐心等待约 30~60 秒，不要关闭窗口）...
+echo [3/3] 正在推送到 GitHub（网络连接约需 30~60 秒，请耐心等待，切勿关闭窗口）...
 git push --progress origin main
 
 if %ERRORLEVEL% EQU 0 (
@@ -45,8 +45,8 @@ if %ERRORLEVEL% EQU 0 (
 ) else (
     echo.
     echo ======================================================
-    echo  [失败] 推送到 GitHub 遇到网络波动或被阻断。
-    echo  建议: 开启科学上网工具（VPN/代理），或稍后重试。
+    echo  [失败] 推送到 GitHub 遇到网络波动。
+    echo  建议: 开启网络代理或稍后重试。
     echo ======================================================
 )
 

@@ -138,6 +138,7 @@ export default defineConfig({
         {
           text: '实战记录与总结',
           items: [
+            { text: '实盘与资产复盘', link: '/finance/portfolio' },
             { text: 'ETF 策略与配置', link: '/finance/etf' },
           ]
         },        

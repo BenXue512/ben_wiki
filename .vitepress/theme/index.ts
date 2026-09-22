@@ -4,11 +4,16 @@ import mediumZoom from 'medium-zoom'
 import { onMounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 
+import PortfolioDashboard from './components/PortfolioDashboard.vue'
+
 // ⭐ 新增这一行，把刚刚的层级修复样式表导进来！
 import './custom.css' 
 
 export default {
   extends: DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('PortfolioDashboard', PortfolioDashboard)
+  },
   setup() {
     const route = useRoute()
     const initZoom = () => {

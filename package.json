@@ -10,6 +10,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
+    "echarts": "^6.1.0",
     "medium-zoom": "^1.1.0"
   }
 }
