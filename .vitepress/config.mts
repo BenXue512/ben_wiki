@@ -150,7 +150,7 @@ export default defineConfig({
         {
           text: '与Ai的对话',
           items: [
-            { text: 'QQQ+VOO+GOV', link: '/finance/美股稳赢配置策略与20年回测手册.md' },
+            { text: 'QQQ+VOO+SGOV策略与回测', link: '/finance/美股稳赢配置策略与20年回测手册' },
           ]
         }
       ],
