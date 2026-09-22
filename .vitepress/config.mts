@@ -132,14 +132,25 @@ export default defineConfig({
             { text: '体系总览', link: '/finance/' },
             { text: '市场宏观与复盘', link: '/finance/market' },
             { text: '个股与行业商业模式', link: '/finance/stock' },
-            { text: 'ETF 策略与配置', link: '/finance/etf' },
             { text: '财务分析与估值模型', link: '/finance/analysis' }
           ]
         },
         {
+          text: '实战记录与总结',
+          items: [
+            { text: 'ETF 策略与配置', link: '/finance/etf' },
+          ]
+        },        
+        {
           text: '课程学习',
           items: [
             { text: '经济机器是怎样运行的Ray Dalio', link: '/finance/经济机器是怎样运行的_知识点总结' },
+          ]
+        },
+        {
+          text: '与Ai的对话',
+          items: [
+            { text: 'QQQ+VOO+GOV', link: '/finance/美股稳赢配置策略与20年回测手册.md' },
           ]
         }
       ],
